@@ -5,17 +5,17 @@
   
 
   
-  <title>Hexo</title>
+  <title>lijiong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="lijiong">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="default">
+<meta property="og:site_name" content="lijiong">
+<meta property="og:locale" content="CN, EN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="lijiong">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="lijiong" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -34,7 +34,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">lijiong</a>
       </h1>
       
     </div>
@@ -85,11 +85,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h5 id="2019-02-14："><a href="#2019-02-14：" class="headerlink" title="2019-02-14："></a>2019-02-14：</h5><p>​    写了新东西后疯狂<code>hexo d</code>但是并没有deploy到github库里，原因是没有<code>hexo g</code>生成static files。坑的是教程里面并没有写清楚，且<code>hexo s</code>可以不需要生成直接预览结果。写完直接<code>hexo d --g</code>就完事了。（如需清理则先<code>hexo clean</code>）</p>
+<p>​    改了一下文件结构，图片凉了，解决方案参考<a href="https://blog.csdn.net/sugar_rainbow/article/details/57415705" target="_blank" rel="noopener">https://blog.csdn.net/sugar_rainbow/article/details/57415705</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjs4hvn5g0002gcvdp7hjdxaj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjs4qjljj0001jovdmp01y31t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -125,13 +126,13 @@
 <h5 id="坑1：环境变量配置"><a href="#坑1：环境变量配置" class="headerlink" title="坑1：环境变量配置"></a>坑1：环境变量配置</h5><p>​    由于anaconda的安装路径包含空格（环境变量中conda所在的Path包含空格），导致VS code在初始化python环境时<code>conda antivate</code>命令报错（cmd不支持含空格的路径），因此需要在环境变量中将带有空格的长路径转为8.3命名规则的短路径，</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> buffer[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"C:\Program Files (x86)\Microsoft Visual Studio"</span>;</span><br><span class="line">	GetShortPathName(<span class="string">"C:\\Program Files (x86)\\Microsoft Visual Studio"</span>, buffer, <span class="keyword">sizeof</span>(buffer));</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; buffer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​    转换效果如下：</p>
-<p><img src="/img/2019-2-14-1.png" alt=""></p>
+<p><img src="/2019/02/14/2019-02-14/../_posts/2019-02-14/2019-2-14-1.png" alt=""></p>
 <h5 id="坑2：项目模板编写"><a href="#坑2：项目模板编写" class="headerlink" title="坑2：项目模板编写"></a>坑2：项目模板编写</h5><p>​    坑太多，懒得写了，参考<a href="https://github.com/AZMDDY/vscode_cpp_template改了一个。" target="_blank" rel="noopener">https://github.com/AZMDDY/vscode_cpp_template改了一个。</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjs4hvn570000gcvd1eskun37" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjs4qjlje0000jovd0jjyx15e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjs4hvn5d0001gcvdoymqzdhv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjs4qjljm0002jovdhb4cildv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -240,7 +241,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
+      &copy; 2019 lijiong<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
