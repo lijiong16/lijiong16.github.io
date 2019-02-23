@@ -63,6 +63,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-写了个小脚本" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/23/写了个小脚本/" class="article-date">
+  <time datetime="2019-02-23T10:34:45.000Z" itemprop="datePublished">2019-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/23/写了个小脚本/">写了个小脚本</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    开学了，写个油猴脚本限制一下自己看B站的欲望。</p>
+<h5 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h5><p>​    从主页面直接跳转到动态页，删除动态页上的无关内容（重新排版有待完成）。</p>
+<h5 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// @include      *://www.bilibili.com</span><br><span class="line">// @match        *://www.bilibili.com</span><br><span class="line">window.location.href=&apos;https://t.bilibili.com&apos;;</span><br><span class="line">var eledelete=function(x)&#123;</span><br><span class="line">    var obj = document.getElementsByClassName(x);</span><br><span class="line">    if (obj!= null)&#123;</span><br><span class="line">        obj[0].parentNode.removeChild(obj[0]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">eledelete(&quot;left-panel f-left&quot;);</span><br><span class="line">eledelete(&quot;right-panel f-left&quot;);</span><br><span class="line">eledelete(&quot;section-block&quot;);</span><br><span class="line">eledelete(&quot;nav-con fl&quot;);</span><br></pre></td></tr></table></figure>
+<h5 id="踩坑："><a href="#踩坑：" class="headerlink" title="踩坑："></a>踩坑：</h5><ol>
+<li><p>ERROR:Cannot read property ‘removeChild’ of undefined</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var eledelete=function(x)&#123;</span><br><span class="line">    var obj = document.getElementsByClassName(x);</span><br><span class="line">    alert(x);</span><br><span class="line">    if (obj!= null)&#123;</span><br><span class="line">        obj.parentNode.removeChild(obj);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>原因：<code>getElementsByClassName()</code>的返回值为对象的数组，应当改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj[0].parentNode.removeChild(obj[0]);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>​    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/02/23/写了个小脚本/" data-id="cjshebnr50001j4vd5sld0fag" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Hexo" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/14/Hexo/" class="article-date">
@@ -91,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjs4yqnq90001qcvdkys63uq5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjshebnqw0000j4vdu4e6l888" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjs4yqnq40000qcvdj6aox1rc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjshebnrh0003j4vdeted32w3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -178,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjs4yqnqb0002qcvdf3k691ke" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjshebnr70002j4vdnlowmy8w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,6 +264,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/02/23/写了个小脚本/">写了个小脚本</a>
+          </li>
         
           <li>
             <a href="/2019/02/14/Hexo/">Hexo</a>
