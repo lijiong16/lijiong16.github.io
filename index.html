@@ -85,15 +85,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-	
-<p>看2019 kick start Practice Round 问题3别人的代码时看到一个操作</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X1=(<span class="number">1l</span>l*c*x+<span class="number">1l</span>l*d*y+e1)%f</span><br></pre></td></tr></table></figure>
-<p>其中X1为long long，c,x为int，“1ll*”这个操作将int转换为long long，防溢出</p>
-
+        Private blog, enter password to read.
+        
+          <p class="article-more-link">
+            <a href="/2019/02/25/1ll/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/25/1ll/" data-id="cjsjsg9mj0000swvd7tvro3ik" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/25/1ll/" data-id="cjsjtvv990000o0vd079sr23p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -126,7 +127,7 @@
     <div class="article-entry" itemprop="articleBody">
       
 	
-<p>​    开学了，写个油猴脚本限制一下自己看B站的欲望。</p>
+        <p>​    开学了，写个油猴脚本限制一下自己看B站的欲望。</p>
 <h5 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h5><p>​    从主页面直接跳转到动态页，删除动态页上的无关内容（重新排版有待完成）。</p>
 <h5 id="实现："><a href="#实现：" class="headerlink" title="实现："></a>实现：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// @include      *://www.bilibili.com</span></span><br><span class="line"><span class="comment">// @match        *://www.bilibili.com</span></span><br><span class="line"><span class="built_in">window</span>.location.href=<span class="string">'https://t.bilibili.com'</span>;</span><br><span class="line"><span class="keyword">var</span> eledelete=<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="built_in">document</span>.getElementsByClassName(x);</span><br><span class="line">    <span class="keyword">if</span> (obj!= <span class="literal">null</span>)&#123;</span><br><span class="line">        obj[<span class="number">0</span>].parentNode.removeChild(obj[<span class="number">0</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">eledelete(<span class="string">"left-panel f-left"</span>);</span><br><span class="line">eledelete(<span class="string">"right-panel f-left"</span>);</span><br><span class="line">eledelete(<span class="string">"section-block"</span>);</span><br><span class="line">eledelete(<span class="string">"nav-con fl"</span>);</span><br></pre></td></tr></table></figure>
 <h5 id="踩坑："><a href="#踩坑：" class="headerlink" title="踩坑："></a>踩坑：</h5><ol>
@@ -141,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/23/写了个小脚本/" data-id="cjsjsg9mx0003swvdwxzzmvw2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/23/写了个小脚本/" data-id="cjsjtvv9i0003o0vd0j9s09hl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,13 +175,13 @@
     <div class="article-entry" itemprop="articleBody">
       
 	
-<h5 id="2019-02-14："><a href="#2019-02-14：" class="headerlink" title="2019-02-14："></a>2019-02-14：</h5><p>​    写了新东西后疯狂<code>hexo d</code>但是并没有deploy到github库里，原因是没有<code>hexo g</code>生成static files。坑的是教程里面并没有写清楚，且<code>hexo s</code>可以不需要生成直接预览结果。写完直接<code>hexo d -g</code>就完事了。（如需清理则先<code>hexo clean</code>）</p>
+        <h5 id="2019-02-14："><a href="#2019-02-14：" class="headerlink" title="2019-02-14："></a>2019-02-14：</h5><p>​    写了新东西后疯狂<code>hexo d</code>但是并没有deploy到github库里，原因是没有<code>hexo g</code>生成static files。坑的是教程里面并没有写清楚，且<code>hexo s</code>可以不需要生成直接预览结果。写完直接<code>hexo d -g</code>就完事了。（如需清理则先<code>hexo clean</code>）</p>
 <p>​    改了一下文件结构，图片凉了，解决方案参考<a href="https://blog.csdn.net/sugar_rainbow/article/details/57415705" target="_blank" rel="noopener">https://blog.csdn.net/sugar_rainbow/article/details/57415705</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjsjsg9mt0001swvdzpjzne9d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjsjtvv9g0002o0vd6an2o2dk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +214,7 @@
     <div class="article-entry" itemprop="articleBody">
       
 	
-<p>​    前两天在给VS code配置C艹和python的调试工具时踩了很多坑，产生了记录一下可能会有用的错觉，于是乎今天用hexo+github pages简单搭了一个“踩坑日记”（博客），搭建过程参考<a href="https://www.cnblogs.com/jackyroc/p/7681938.html，不再赘述。" target="_blank" rel="noopener">https://www.cnblogs.com/jackyroc/p/7681938.html，不再赘述。</a></p>
+        <p>​    前两天在给VS code配置C艹和python的调试工具时踩了很多坑，产生了记录一下可能会有用的错觉，于是乎今天用hexo+github pages简单搭了一个“踩坑日记”（博客），搭建过程参考<a href="https://www.cnblogs.com/jackyroc/p/7681938.html，不再赘述。" target="_blank" rel="noopener">https://www.cnblogs.com/jackyroc/p/7681938.html，不再赘述。</a></p>
 <h5 id="坑1：环境变量配置"><a href="#坑1：环境变量配置" class="headerlink" title="坑1：环境变量配置"></a>坑1：环境变量配置</h5><p>​    由于anaconda的安装路径包含空格（环境变量中conda所在的Path包含空格），导致VS code在初始化python环境时<code>conda antivate</code>命令报错（cmd不支持含空格的路径），因此需要在环境变量中将带有空格的长路径转为8.3命名规则的短路径，</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> buffer[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"C:\Program Files (x86)\Microsoft Visual Studio"</span>;</span><br><span class="line">	GetShortPathName(<span class="string">"C:\\Program Files (x86)\\Microsoft Visual Studio"</span>, buffer, <span class="keyword">sizeof</span>(buffer));</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; buffer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​    转换效果如下：</p>
@@ -223,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjsjsg9mv0002swvde1ofoycc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjsjtvv9e0001o0vd7cye43b5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -256,7 +257,7 @@
     <div class="article-entry" itemprop="articleBody">
       
 	
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -269,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjsjsg9mz0004swvd529y0y3f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjsjtvv9k0004o0vdtlgwilw2" class="article-share-link">Share</a>
       
       
     </footer>

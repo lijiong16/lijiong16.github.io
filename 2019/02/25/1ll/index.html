@@ -7,17 +7,17 @@
   
   <title>1ll | lijiong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="看2019 kick start Practice Round 问题3别人的代码时看到一个操作 1X1=(1ll*c*x+1ll*d*y+e1)%f 其中X1为long long，c,x为int，“1ll*”这个操作将int转换为long long，防溢出">
+  <meta name="description" content="Private blog, enter password to read.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1ll">
 <meta property="og:url" content="http://yoursite.com/2019/02/25/1ll/index.html">
 <meta property="og:site_name" content="lijiong">
-<meta property="og:description" content="看2019 kick start Practice Round 问题3别人的代码时看到一个操作 1X1=(1ll*c*x+1ll*d*y+e1)%f 其中X1为long long，c,x为int，“1ll*”这个操作将int转换为long long，防溢出">
+<meta property="og:description" content="Private blog, enter password to read.">
 <meta property="og:locale" content="CN, EN">
 <meta property="og:updated_time" content="2019-02-25T03:36:03.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1ll">
-<meta name="twitter:description" content="看2019 kick start Practice Round 问题3别人的代码时看到一个操作 1X1=(1ll*c*x+1ll*d*y+e1)%f 其中X1为long long，c,x为int，“1ll*”这个操作将int转换为long long，防溢出">
+<meta name="twitter:description" content="Private blog, enter password to read.">
   
     <link rel="alternate" href="/atom.xml" title="lijiong" type="application/atom+xml">
   
@@ -88,14 +88,24 @@
     <div class="article-entry" itemprop="articleBody">
       
 	
-<p>看2019 kick start Practice Round 问题3别人的代码时看到一个操作</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">X1=(<span class="number">1l</span>l*c*x+<span class="number">1l</span>l*d*y+e1)%f</span><br></pre></td></tr></table></figure>
-<p>其中X1为long long，c,x为int，“1ll*”这个操作将int转换为long long，防溢出</p>
-
+        <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="Private blog, enter password to read.">
+    <label for="pass">Private blog, enter password to read.</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+U2FsdGVkX1/FbttwSLsbI6ZQFvR+l9t7ZPdye2/idjG81S9ECdyonq1u1XhpIfyY0qXJZWzyECFbh7Cn9t5HXRcMvCp+tZQvyl8QdWmi/IROVudThS70CIKZJ21zkXbqxtF7hxx1iZL82VqjXbPSux1F+f7EXtnzElpA3aQu2JMISMIUnNj9SulucOHbb2bHQED0YsYcOcWd5xWAOAZk2d7PZX/WNZlqnvjQKyb/p1WtiPvXzjgVCMXVWZqKukqkdiTZsS3sn/OTHYQb6aTVoLtLTttAaMF5DuQEnmnwgiPKo20TqTwn0RU6cQ/15bWqD7KshbQlDaMQS3ySlLYCGin+COZQub+884s36Doaev8l3lB79Xg1Gm/IpRALRTq3+3NDP+dmablb8z0fwJVmoEwbBRtnXjlTO3Vtc4/rYUC+0WEe1cNQresvd57Mheocfr2C1Hh+0eZ4eL+pE1oNkyNbU/Gm3yxBpXNoxIc3QHA/fAfT/V2HcCNnwlrBwXHTyKYbfgW+deSUxcSE2mJxQvzs7FKsmix+DXzVWI6WdgsN/jtIiXIuJFLMjcJFC/w9xs/ClQL+LmUJz2p6FbWRbogEaouVZSeh7KIxlO6Q8wpzUvJVIPdWAre6k3Par+n8p/lgbnnR8H6qQmMKZLMPCTuR2yUqbM71cLSWBEjY/IclJrM2p2lod5VUT++66MqTx0b+uuUry1dN6sDxZo3ag+lRXirxQWEWEifPMCQD9ldbXGYFpzjH6PvNTr/JOIbP9MSDxXQVnq23+PUXTLRUB4TVpCMlThYo6xngQP4ug3arMRko7QxxYkiCE/zQIHUFaqfD3pGeLXys+g4YXohHnRNSBmoa9J0pUGqJRMuW1gf8Z1u6SAH2AYpLxHh+VwoamneVqaGGzxNpaNKVNQN3ed6aK6teMt/QYZ8Rs9o+nj92A7vBxveMuywHVwvgYFijwu+N/3m3FubBIc1iPjnXJJiZLsnDKM73kS42ByybyHIae/fhe5+zlcQnyT8qTW45M8W3q8gLVtPuKgPDu7iIN0o5735u9wIBX9YUAsyV78T0+PcLVI7rx21k/Sp5ysXCe1fh1ORwvdlZxcLYsa433jL8DcNu8tA2EBq8AKAjvSXsCbf2iSt1MyJqp+/nvbB61IwZ+fbaov9EYG/VySC7RM6JIQEo71ZH6CaBg/T8OVAuNBtsczyXoynjkso4NQ1rLpK5dOvXqD5Lg5VYnaIs7oJkGbujuJ8juTK/5uf4ePsWoHaT6RQsFvR+0R5km9nGWUeazdxHwNhnDrqRua0H/SGj5+RH31RVtP7T9ZTUXKQfUaN0j49jyQasq5vCvVDoMvMIUqn1zXDxFfUxTZwySxnCrB5pvfy8WEzcT6PzQY0=
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/25/1ll/" data-id="cjsjsg9mj0000swvd7tvro3ik" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/25/1ll/" data-id="cjsjtvv990000o0vd079sr23p" class="article-share-link">Share</a>
       
       
     </footer>
