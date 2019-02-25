@@ -257,7 +257,6 @@ jQuery(document).ready(function($) {
     });
 });
 </script>
-
 <script type="text/javascript">
  !function() {
 	function o(w, v, i) {
@@ -310,7 +309,7 @@ jQuery(document).ready(function($) {
 		max: 20000
 	};
 	u.id = c;
-	u.style.cssText = "position:fixed;top:0;left:0;z-index:" + s.z + ";opacity:" + s.o;
+	u.style.cssText = "pointer-events:none;position:fixed;top:0;left:0;z-index:" + s.z + ";opacity:" + s.o;
 	j("body")[0].appendChild(u);
 	k(), window.onresize = k;
 	window.onmousemove = function(i) {
@@ -336,6 +335,7 @@ jQuery(document).ready(function($) {
 	}, 100)
 }();
 </script>
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

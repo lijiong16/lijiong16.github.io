@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="lijiong">
 <meta property="og:description" content="2019-02-14：​    写了新东西后疯狂hexo d但是并没有deploy到github库里，原因是没有hexo g生成static files。坑的是教程里面并没有写清楚，且hexo s可以不需要生成直接预览结果。写完直接hexo d -g就完事了。（如需清理则先hexo clean） ​    改了一下文件结构，图片凉了，解决方案参考https://blog.csdn.net/suga">
 <meta property="og:locale" content="CN, EN">
-<meta property="og:updated_time" content="2019-02-14T14:47:32.293Z">
+<meta property="og:updated_time" content="2019-02-25T04:41:00.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="2019-02-14：​    写了新东西后疯狂hexo d但是并没有deploy到github库里，原因是没有hexo g生成static files。坑的是教程里面并没有写清楚，且hexo s可以不需要生成直接预览结果。写完直接hexo d -g就完事了。（如需清理则先hexo clean） ​    改了一下文件结构，图片凉了，解决方案参考https://blog.csdn.net/suga">
@@ -90,6 +90,8 @@
 	
         <h5 id="2019-02-14："><a href="#2019-02-14：" class="headerlink" title="2019-02-14："></a>2019-02-14：</h5><p>​    写了新东西后疯狂<code>hexo d</code>但是并没有deploy到github库里，原因是没有<code>hexo g</code>生成static files。坑的是教程里面并没有写清楚，且<code>hexo s</code>可以不需要生成直接预览结果。写完直接<code>hexo d -g</code>就完事了。（如需清理则先<code>hexo clean</code>）</p>
 <p>​    改了一下文件结构，图片凉了，解决方案参考<a href="https://blog.csdn.net/sugar_rainbow/article/details/57415705" target="_blank" rel="noopener">https://blog.csdn.net/sugar_rainbow/article/details/57415705</a></p>
+<h5 id="2019-02-25"><a href="#2019-02-25" class="headerlink" title="2019-02-25"></a>2019-02-25</h5><p>​    给hexo上的私人日记加密</p>
+<p>​    解决方案：<a href="https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md" target="_blank" rel="noopener">https://github.com/MikeCoder/hexo-blog-encrypt/blob/master/ReadMe.zh.md</a></p>
 
       
     </div>
@@ -251,7 +253,6 @@ jQuery(document).ready(function($) {
     });
 });
 </script>
-
 <script type="text/javascript">
  !function() {
 	function o(w, v, i) {
@@ -304,7 +305,7 @@ jQuery(document).ready(function($) {
 		max: 20000
 	};
 	u.id = c;
-	u.style.cssText = "position:fixed;top:0;left:0;z-index:" + s.z + ";opacity:" + s.o;
+	u.style.cssText = "pointer-events:none;position:fixed;top:0;left:0;z-index:" + s.z + ";opacity:" + s.o;
 	j("body")[0].appendChild(u);
 	k(), window.onresize = k;
 	window.onmousemove = function(i) {
@@ -330,6 +331,7 @@ jQuery(document).ready(function($) {
 	}, 100)
 }();
 </script>
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
