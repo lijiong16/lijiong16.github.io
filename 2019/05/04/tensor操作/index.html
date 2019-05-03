@@ -5,15 +5,19 @@
   
 
   
-  <title>Archives: 2019/4 | lijiong</title>
+  <title>tensor操作 | lijiong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lijiong">
-<meta property="og:url" content="http://yoursite.com/archives/2019/04/index.html">
+  <meta name="description" content="写PR作业的时候出了诡异bug，train_acc很正常，valid_acc一直是个很小的数字。检查发现问题出在： 1acc=sum(pred==torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze()) 其中My_valid为one-hot编码，torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tensor操作">
+<meta property="og:url" content="http://yoursite.com/2019/05/04/tensor操作/index.html">
 <meta property="og:site_name" content="lijiong">
+<meta property="og:description" content="写PR作业的时候出了诡异bug，train_acc很正常，valid_acc一直是个很小的数字。检查发现问题出在： 1acc=sum(pred==torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze()) 其中My_valid为one-hot编码，torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze">
 <meta property="og:locale" content="CN, EN">
+<meta property="og:updated_time" content="2019-05-03T17:25:52.615Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lijiong">
+<meta name="twitter:title" content="tensor操作">
+<meta name="twitter:description" content="写PR作业的时候出了诡异bug，train_acc很正常，valid_acc一直是个很小的数字。检查发现问题出在： 1acc=sum(pred==torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze()) 其中My_valid为one-hot编码，torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze">
   
     <link rel="alternate" href="/atom.xml" title="lijiong" type="application/atom+xml">
   
@@ -61,40 +65,60 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/01/cmd真滴害人/" class="archive-article-date">
-  <time datetime="2019-04-01T12:42:46.000Z" itemprop="datePublished">Apr 1</time>
+        <section id="main"><article id="post-tensor操作" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/04/tensor操作/" class="article-date">
+  <time datetime="2019-05-03T17:17:19.000Z" itemprop="datePublished">2019-05-04</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/01/cmd真滴害人/">VisualStudio真滴害人</a>
+    <h1 class="article-title" itemprop="name">
+      tensor操作
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	
+        <p>写PR作业的时候出了诡异bug，train_acc很正常，valid_acc一直是个很小的数字。检查发现问题出在：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze())</span><br></pre></td></tr></table></figure>
+<p>其中My_valid为one-hot编码，<code>torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze()</code>操作即one-hot转数字,<code>nonzero()</code>转为 [序号,标签] 的二元tensor，使用<code>chunk()</code>和<code>squeeze()</code>转为一维tensor</p>
+<p>sum里面的内容为tensor，直接求sum出错（很奇怪求train_acc也是这么写的就没错）</p>
+<p>可以改为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=tensor.sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze())</span><br></pre></td></tr></table></figure>
+<p>Or</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze().cpu().numpy())</span><br></pre></td></tr></table></figure>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/04/tensor操作/" data-id="cjv8cnua10003egvdrk71k7u4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/01/cmd真滴害人/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">VisualStudio真滴害人</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         

@@ -63,6 +63,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-tensor操作" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/04/tensor操作/" class="article-date">
+  <time datetime="2019-05-03T17:17:19.000Z" itemprop="datePublished">2019-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/04/tensor操作/">tensor操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	
+        <p>写PR作业的时候出了诡异bug，train_acc很正常，valid_acc一直是个很小的数字。检查发现问题出在：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze())</span><br></pre></td></tr></table></figure>
+<p>其中My_valid为one-hot编码，<code>torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze()</code>操作即one-hot转数字,<code>nonzero()</code>转为 [序号,标签] 的二元tensor，使用<code>chunk()</code>和<code>squeeze()</code>转为一维tensor</p>
+<p>sum里面的内容为tensor，直接求sum出错（很奇怪求train_acc也是这么写的就没错）</p>
+<p>可以改为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=tensor.sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze())</span><br></pre></td></tr></table></figure>
+<p>Or</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze().cpu().numpy())</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/04/tensor操作/" data-id="cjv8cnua10003egvdrk71k7u4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-cmd真滴害人" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/01/cmd真滴害人/" class="article-date">
@@ -108,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/01/cmd真滴害人/" data-id="cjtyd5mdb00037wvd1zn5g9zl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/01/cmd真滴害人/" data-id="cjv8cnua30004egvdhumy5i1r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/07/collections.Counter/" data-id="cjtyd5md900027wvd4xw0ju7q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/07/collections.Counter/" data-id="cjv8cnua30005egvd99mnv3sz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/25/1ll/" data-id="cjtyd5md300007wvdv6yrgpbn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/25/1ll/" data-id="cjv8cnua00002egvdfhbdaxuh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -238,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/23/写了个小脚本/" data-id="cjtyd5mde00057wvdp8hd0bl6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/23/写了个小脚本/" data-id="cjv8cnua50007egvd3b3yikih" class="article-share-link">Share</a>
       
       
     </footer>
@@ -279,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjtyd5mdc00047wvdua2jzcmv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjv8cnu9y0001egvd6bb17goy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjtyd5md700017wvdqyszwc8z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjv8cnu9u0000egvdjrlv57gp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -368,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjtyd5mdf00067wvds6mq2g5a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjv8cnua40006egvdo3a1wnor" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,7 +441,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
     </div>
   </div>
 
@@ -407,6 +452,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/05/04/tensor操作/">tensor操作</a>
+          </li>
         
           <li>
             <a href="/2019/04/01/cmd真滴害人/">VisualStudio真滴害人</a>
@@ -422,10 +471,6 @@
         
           <li>
             <a href="/2019/02/23/写了个小脚本/">写了个小脚本</a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/14/Hexo/">Hexo</a>
           </li>
         
       </ul>
