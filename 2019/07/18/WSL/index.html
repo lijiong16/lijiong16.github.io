@@ -5,15 +5,22 @@
   
 
   
-  <title>Archives | lijiong</title>
+  <title>WSL | lijiong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lijiong">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="WSL的安装及配置1. 自定义安装位置 download LxRunOffline release ver from https://github.com/DDoSolitary/LxRunOffline then unzip  download appx ver linux package from  https://docs.microsoft.com/en-us/windows/wsl/in">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WSL">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/WSL/index.html">
 <meta property="og:site_name" content="lijiong">
+<meta property="og:description" content="WSL的安装及配置1. 自定义安装位置 download LxRunOffline release ver from https://github.com/DDoSolitary/LxRunOffline then unzip  download appx ver linux package from  https://docs.microsoft.com/en-us/windows/wsl/in">
 <meta property="og:locale" content="CN, EN">
+<meta property="og:image" content="http://yoursite.com/2019/07/18/WSL/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/07/18/WSL/2.jpg">
+<meta property="og:updated_time" content="2019-07-18T09:05:24.640Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lijiong">
+<meta name="twitter:title" content="WSL">
+<meta name="twitter:description" content="WSL的安装及配置1. 自定义安装位置 download LxRunOffline release ver from https://github.com/DDoSolitary/LxRunOffline then unzip  download appx ver linux package from  https://docs.microsoft.com/en-us/windows/wsl/in">
+<meta name="twitter:image" content="http://yoursite.com/2019/07/18/WSL/1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="lijiong" type="application/atom+xml">
   
@@ -61,192 +68,74 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/07/18/WSL/" class="archive-article-date">
-  <time datetime="2019-07-18T08:09:58.000Z" itemprop="datePublished">Jul 18</time>
+        <section id="main"><article id="post-WSL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/18/WSL/" class="article-date">
+  <time datetime="2019-07-18T08:09:58.000Z" itemprop="datePublished">2019-07-18</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/18/WSL/">WSL</a>
+    <h1 class="article-title" itemprop="name">
+      WSL
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/04/tensor操作/" class="archive-article-date">
-  <time datetime="2019-05-03T17:17:19.000Z" itemprop="datePublished">May 4</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/04/tensor操作/">tensor操作</a>
-    </h1>
-  
+	
+        <h1 id="WSL的安装及配置"><a href="#WSL的安装及配置" class="headerlink" title="WSL的安装及配置"></a>WSL的安装及配置</h1><h2 id="1-自定义安装位置"><a href="#1-自定义安装位置" class="headerlink" title="1. 自定义安装位置"></a>1. 自定义安装位置</h2><ol>
+<li><p>download LxRunOffline release ver from <a href="https://github.com/DDoSolitary/LxRunOffline" target="_blank" rel="noopener">https://github.com/DDoSolitary/LxRunOffline</a> then unzip</p>
+</li>
+<li><p>download appx ver linux package from  <a href="https://docs.microsoft.com/en-us/windows/wsl/install-manual" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/wsl/install-manual</a></p>
+</li>
+<li><p>change package from .appx to .zip then unzip</p>
+</li>
+<li><p>install wsl with </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$LxRunOffline.exe install -n Ubuntu -d A:\wsl -f C:\Users\lijiong\Desktop\Ubuntu_1604.2019.523.0_x64\install.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>use cmd command <code>wsl</code> to open </p>
+</li>
+</ol>
+<h2 id="2-Add-user"><a href="#2-Add-user" class="headerlink" title="2. Add user"></a>2. Add user</h2><p>​    WSL has a default root user， you‘d better add your own user to prevent damage from mis-operation. Every time you open WSL, manually switch to your own user.</p>
+<h2 id="3-更换清华源"><a href="#3-更换清华源" class="headerlink" title="3.更换清华源"></a>3.更换清华源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://tuna.moe/oh-my-tuna/oh-my-tuna.py</span><br><span class="line"></span><br><span class="line">python oh-my-tuna.py -h (h for help)</span><br><span class="line"></span><br><span class="line">python3 oh-my-tuna.py -g (g for gobal)</span><br><span class="line"></span><br><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+<h2 id="4-xfce4-VNC图形界面"><a href="#4-xfce4-VNC图形界面" class="headerlink" title="4. xfce4+VNC图形界面"></a>4. xfce4+VNC图形界面</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">apt-get install vnc4server</span><br><span class="line"></span><br><span class="line">apt-get install xfce4</span><br><span class="line"></span><br><span class="line">vncserver</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/07/18/WSL/1.jpg" alt=""></p>
+<p><img src="/2019/07/18/WSL/2.jpg" alt=""></p>
+<p>修改root(or username).vnc\xstart文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">unset SESSION_MANAGER</span><br><span class="line">unset DBUS_SESSION_BUS_ADDRESS</span><br><span class="line">startxfce4 &amp;</span><br><span class="line"></span><br><span class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup</span><br><span class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources</span><br><span class="line">xsetroot -solid grey</span><br></pre></td></tr></table></figure>
+<p>重启vncserver</p>
+<p>win10VNC连接127.0.0.1:5901</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/04/01/cmd真滴害人/" class="archive-article-date">
-  <time datetime="2019-04-01T12:42:46.000Z" itemprop="datePublished">Apr 1</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/01/cmd真滴害人/">VisualStudio真滴害人</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/07/collections.Counter/" class="archive-article-date">
-  <time datetime="2019-03-07T12:03:48.000Z" itemprop="datePublished">Mar 7</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/18/WSL/" data-id="cjy8g97o30002agvds30bhnlq" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/07/collections.Counter/">collections.Counter</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/25/1ll/" class="archive-article-date">
-  <time datetime="2019-02-25T03:25:48.000Z" itemprop="datePublished">Feb 25</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/1ll/">1ll</a>
-    </h1>
-  
-
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/23/写了个小脚本/" class="archive-article-date">
-  <time datetime="2019-02-23T10:34:45.000Z" itemprop="datePublished">Feb 23</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/23/写了个小脚本/">写了个小脚本</a>
-    </h1>
   
+    <a href="/2019/05/04/tensor操作/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">tensor操作</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/14/Hexo/" class="archive-article-date">
-  <time datetime="2019-02-14T10:24:44.000Z" itemprop="datePublished">Feb 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/Hexo/">Hexo</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-w">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/14/2019-02-14/" class="archive-article-date">
-  <time datetime="2019-02-14T09:25:36.000Z" itemprop="datePublished">Feb 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/2019-02-14/">2019-02-14</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/14/hello-world/" class="archive-article-date">
-  <time datetime="2019-02-14T08:40:09.503Z" itemprop="datePublished">Feb 14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         

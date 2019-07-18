@@ -63,6 +63,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-WSL" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/18/WSL/" class="article-date">
+  <time datetime="2019-07-18T08:09:58.000Z" itemprop="datePublished">2019-07-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/18/WSL/">WSL</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+	
+        <h1 id="WSL的安装及配置"><a href="#WSL的安装及配置" class="headerlink" title="WSL的安装及配置"></a>WSL的安装及配置</h1><h2 id="1-自定义安装位置"><a href="#1-自定义安装位置" class="headerlink" title="1. 自定义安装位置"></a>1. 自定义安装位置</h2><ol>
+<li><p>download LxRunOffline release ver from <a href="https://github.com/DDoSolitary/LxRunOffline" target="_blank" rel="noopener">https://github.com/DDoSolitary/LxRunOffline</a> then unzip</p>
+</li>
+<li><p>download appx ver linux package from  <a href="https://docs.microsoft.com/en-us/windows/wsl/install-manual" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/wsl/install-manual</a></p>
+</li>
+<li><p>change package from .appx to .zip then unzip</p>
+</li>
+<li><p>install wsl with </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$LxRunOffline.exe install -n Ubuntu -d A:\wsl -f C:\Users\lijiong\Desktop\Ubuntu_1604.2019.523.0_x64\install.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>use cmd command <code>wsl</code> to open </p>
+</li>
+</ol>
+<h2 id="2-Add-user"><a href="#2-Add-user" class="headerlink" title="2. Add user"></a>2. Add user</h2><p>​    WSL has a default root user， you‘d better add your own user to prevent damage from mis-operation. Every time you open WSL, manually switch to your own user.</p>
+<h2 id="3-更换清华源"><a href="#3-更换清华源" class="headerlink" title="3.更换清华源"></a>3.更换清华源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://tuna.moe/oh-my-tuna/oh-my-tuna.py</span><br><span class="line"></span><br><span class="line">python oh-my-tuna.py -h (h for help)</span><br><span class="line"></span><br><span class="line">python3 oh-my-tuna.py -g (g for gobal)</span><br><span class="line"></span><br><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+<h2 id="4-xfce4-VNC图形界面"><a href="#4-xfce4-VNC图形界面" class="headerlink" title="4. xfce4+VNC图形界面"></a>4. xfce4+VNC图形界面</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">apt-get install vnc4server</span><br><span class="line"></span><br><span class="line">apt-get install xfce4</span><br><span class="line"></span><br><span class="line">vncserver</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/07/18/WSL/1.jpg" alt=""></p>
+<p><img src="/2019/07/18/WSL/2.jpg" alt=""></p>
+<p>修改root(or username).vnc\xstart文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">unset SESSION_MANAGER</span><br><span class="line">unset DBUS_SESSION_BUS_ADDRESS</span><br><span class="line">startxfce4 &amp;</span><br><span class="line"></span><br><span class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup</span><br><span class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources</span><br><span class="line">xsetroot -solid grey</span><br></pre></td></tr></table></figure>
+<p>重启vncserver</p>
+<p>win10VNC连接127.0.0.1:5901</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/18/WSL/" data-id="cjy8g97o30002agvds30bhnlq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-tensor操作" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/05/04/tensor操作/" class="article-date">
@@ -89,7 +148,7 @@
         <p>写PR作业的时候出了诡异bug，train_acc很正常，valid_acc一直是个很小的数字。检查发现问题出在：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze())</span><br></pre></td></tr></table></figure>
 <p>其中My_valid为one-hot编码，<code>torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze()</code>操作即one-hot转数字,<code>nonzero()</code>转为 [序号,标签] 的二元tensor，使用<code>chunk()</code>和<code>squeeze()</code>转为一维tensor</p>
-<p>sum里面的内容为tensor，直接求sum出错（很奇怪求train_acc也是这么写的就没错）</p>
+<p>sum里面的内容为tensor，直接求sum出错（很奇怪求train_acc也是这么写的就没错，小样本没啥问题，大样本结果会变小？？？）</p>
 <p>可以改为：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=tensor.sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze())</span><br></pre></td></tr></table></figure>
 <p>Or</p>
@@ -98,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/04/tensor操作/" data-id="cjv8cnua10003egvdrk71k7u4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/04/tensor操作/" data-id="cjy8g97s20008agvd5rfz6t99" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/01/cmd真滴害人/" data-id="cjv8cnua30004egvdhumy5i1r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/01/cmd真滴害人/" data-id="cjy8g97o40003agvd18m3c6hb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/07/collections.Counter/" data-id="cjv8cnua30005egvd99mnv3sz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/07/collections.Counter/" data-id="cjy8g97o70005agvdt8j53utt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -235,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/25/1ll/" data-id="cjv8cnua00002egvdfhbdaxuh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/25/1ll/" data-id="cjy8g97o20001agvdy348d1l5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/23/写了个小脚本/" data-id="cjv8cnua50007egvd3b3yikih" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/23/写了个小脚本/" data-id="cjy8g97o80006agvd9x46peyl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -324,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjv8cnu9y0001egvd6bb17goy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/Hexo/" data-id="cjy8g97o60004agvdfywohjg2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -367,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjv8cnu9u0000egvdjrlv57gp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/2019-02-14/" data-id="cjy8g97nu0000agvdgq2pamfh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -413,7 +472,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjv8cnua40006egvdo3a1wnor" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/14/hello-world/" data-id="cjy8g97px0007agvdzlrxw3js" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,7 +500,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
     </div>
   </div>
 
@@ -452,6 +511,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/07/18/WSL/">WSL</a>
+          </li>
         
           <li>
             <a href="/2019/05/04/tensor操作/">tensor操作</a>
@@ -467,10 +530,6 @@
         
           <li>
             <a href="/2019/02/25/1ll/">1ll</a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/23/写了个小脚本/">写了个小脚本</a>
           </li>
         
       </ul>

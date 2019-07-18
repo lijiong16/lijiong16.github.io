@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="lijiong">
 <meta property="og:description" content="写PR作业的时候出了诡异bug，train_acc很正常，valid_acc一直是个很小的数字。检查发现问题出在： 1acc=sum(pred==torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze()) 其中My_valid为one-hot编码，torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze">
 <meta property="og:locale" content="CN, EN">
-<meta property="og:updated_time" content="2019-05-03T17:25:52.615Z">
+<meta property="og:updated_time" content="2019-05-03T17:31:58.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tensor操作">
 <meta name="twitter:description" content="写PR作业的时候出了诡异bug，train_acc很正常，valid_acc一直是个很小的数字。检查发现问题出在： 1acc=sum(pred==torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze()) 其中My_valid为one-hot编码，torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze">
@@ -91,7 +91,7 @@
         <p>写PR作业的时候出了诡异bug，train_acc很正常，valid_acc一直是个很小的数字。检查发现问题出在：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze())</span><br></pre></td></tr></table></figure>
 <p>其中My_valid为one-hot编码，<code>torch.chunk(torch.nonzero(My_valid),2,1)[1].squeeze()</code>操作即one-hot转数字,<code>nonzero()</code>转为 [序号,标签] 的二元tensor，使用<code>chunk()</code>和<code>squeeze()</code>转为一维tensor</p>
-<p>sum里面的内容为tensor，直接求sum出错（很奇怪求train_acc也是这么写的就没错）</p>
+<p>sum里面的内容为tensor，直接求sum出错（很奇怪求train_acc也是这么写的就没错，小样本没啥问题，大样本结果会变小？？？）</p>
 <p>可以改为：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acc=tensor.sum(pred==torch.chunk(torch.nonzero(My_valid),<span class="number">2</span>,<span class="number">1</span>)[<span class="number">1</span>].squeeze())</span><br></pre></td></tr></table></figure>
 <p>Or</p>
@@ -100,7 +100,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/04/tensor操作/" data-id="cjv8cnua10003egvdrk71k7u4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/04/tensor操作/" data-id="cjy8g97s20008agvd5rfz6t99" class="article-share-link">Share</a>
       
       
     </footer>
@@ -108,6 +108,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/07/18/WSL/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          WSL
+        
+      </div>
+    </a>
   
   
     <a href="/2019/04/01/cmd真滴害人/" id="article-nav-older" class="article-nav-link-wrap">
@@ -136,7 +145,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
     </div>
   </div>
 
@@ -147,6 +156,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/07/18/WSL/">WSL</a>
+          </li>
         
           <li>
             <a href="/2019/05/04/tensor操作/">tensor操作</a>
@@ -162,10 +175,6 @@
         
           <li>
             <a href="/2019/02/25/1ll/">1ll</a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/23/写了个小脚本/">写了个小脚本</a>
           </li>
         
       </ul>
