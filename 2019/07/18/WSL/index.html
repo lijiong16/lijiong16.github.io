@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://www.lijiong.xyz/2019/07/18/WSL/1.jpg">
 <meta property="og:image" content="http://www.lijiong.xyz/2019/07/18/WSL/2.jpg">
 <meta property="og:image" content="http://www.lijiong.xyz/2019/07/18/WSL/3.jpg">
-<meta property="og:updated_time" content="2019-07-18T09:27:05.552Z">
+<meta property="og:updated_time" content="2019-07-22T01:52:18.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WSL">
 <meta name="twitter:description" content="WSL的安装及配置1. 自定义安装位置 download LxRunOffline release ver from https://github.com/DDoSolitary/LxRunOffline then unzip  download appx ver linux package from  https://docs.microsoft.com/en-us/windows/wsl/in">
@@ -105,6 +105,7 @@
 <li><p>use cmd command <code>wsl</code> to open </p>
 </li>
 </ol>
+<p>   ps. this method may cause some damage and can’t open browsers in ubuntu, I then tried put Ubuntu.zip in other disk and run Ubuntu.exe, it may work ,wait for update.</p>
 <h2 id="2-Add-user"><a href="#2-Add-user" class="headerlink" title="2. Add user"></a>2. Add user</h2><p>​    WSL has a default root user， you‘d better add your own user to prevent damage from mis-operation. Every time you open WSL, manually switch to your own user.</p>
 <h2 id="3-更换清华源"><a href="#3-更换清华源" class="headerlink" title="3.更换清华源"></a>3.更换清华源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://tuna.moe/oh-my-tuna/oh-my-tuna.py</span><br><span class="line"></span><br><span class="line">python oh-my-tuna.py -h (h for help)</span><br><span class="line"></span><br><span class="line">python3 oh-my-tuna.py -g (g for gobal)</span><br><span class="line"></span><br><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
 <h2 id="4-xfce4-VNC图形界面"><a href="#4-xfce4-VNC图形界面" class="headerlink" title="4. xfce4+VNC图形界面"></a>4. xfce4+VNC图形界面</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">apt-get install vnc4server</span><br><span class="line"></span><br><span class="line">apt-get install xfce4</span><br><span class="line"></span><br><span class="line">vncserver</span><br></pre></td></tr></table></figure>
@@ -115,11 +116,14 @@
 <p>重启vncserver</p>
 <p>win10VNC连接127.0.0.1:5901</p>
 <p><img src="/2019/07/18/WSL/3.jpg" alt=""></p>
+<p>————————————7.22 update————————————</p>
+<p>安装anaconda后 由于conda init操作导致系统python版本与VNC4server不兼容，将~/.bashrc部分修改，只保留必要功能即可解决。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># !! Contents within this block are managed by 'conda init' !!</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">export PATH=<span class="string">"$PATH:/home/lijiong/anaconda3/bin"</span></span><br><span class="line">conda activate base</span><br><span class="line"><span class="comment">#__conda_setup="$('/home/lijiong/anaconda3/bin/conda' 'shell.bash' 'hook' 2&gt; /dev/null)"</span></span><br><span class="line"><span class="comment">#if [ $? -eq 0 ]; then</span></span><br><span class="line"><span class="comment">#    eval "$__conda_setup"</span></span><br><span class="line"><span class="comment">#else</span></span><br><span class="line"><span class="comment">#    if [ -f "/home/lijiong/anaconda3/etc/profile.d/conda.sh" ]; then</span></span><br><span class="line"><span class="comment">#        . "/home/lijiong/anaconda3/etc/profile.d/conda.sh"</span></span><br><span class="line"><span class="comment">#    else</span></span><br><span class="line"><span class="comment">#        export PATH="/home/lijiong/anaconda3/bin:$PATH"</span></span><br><span class="line"><span class="comment">#    fi</span></span><br><span class="line"><span class="comment">#fi</span></span><br><span class="line"><span class="comment">#unset __conda_setup</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/07/18/WSL/" data-id="cjy8h41ov0004x8vdot03al4o" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/07/18/WSL/" data-id="cjydqkv380002k8vddqpdkzhs" class="article-share-link">Share</a>
       
       
     </footer>

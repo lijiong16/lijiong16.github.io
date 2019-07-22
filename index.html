@@ -99,6 +99,7 @@
 <li><p>use cmd command <code>wsl</code> to open </p>
 </li>
 </ol>
+<p>   ps. this method may cause some damage and can’t open browsers in ubuntu, I then tried put Ubuntu.zip in other disk and run Ubuntu.exe, it may work ,wait for update.</p>
 <h2 id="2-Add-user"><a href="#2-Add-user" class="headerlink" title="2. Add user"></a>2. Add user</h2><p>​    WSL has a default root user， you‘d better add your own user to prevent damage from mis-operation. Every time you open WSL, manually switch to your own user.</p>
 <h2 id="3-更换清华源"><a href="#3-更换清华源" class="headerlink" title="3.更换清华源"></a>3.更换清华源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://tuna.moe/oh-my-tuna/oh-my-tuna.py</span><br><span class="line"></span><br><span class="line">python oh-my-tuna.py -h (h for help)</span><br><span class="line"></span><br><span class="line">python3 oh-my-tuna.py -g (g for gobal)</span><br><span class="line"></span><br><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
 <h2 id="4-xfce4-VNC图形界面"><a href="#4-xfce4-VNC图形界面" class="headerlink" title="4. xfce4+VNC图形界面"></a>4. xfce4+VNC图形界面</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">apt-get install vnc4server</span><br><span class="line"></span><br><span class="line">apt-get install xfce4</span><br><span class="line"></span><br><span class="line">vncserver</span><br></pre></td></tr></table></figure>
@@ -109,11 +110,14 @@
 <p>重启vncserver</p>
 <p>win10VNC连接127.0.0.1:5901</p>
 <p><img src="/2019/07/18/WSL/3.jpg" alt=""></p>
+<p>————————————7.22 update————————————</p>
+<p>安装anaconda后 由于conda init操作导致系统python版本与VNC4server不兼容，将~/.bashrc部分修改，只保留必要功能即可解决。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># &gt;&gt;&gt; conda initialize &gt;&gt;&gt;</span></span><br><span class="line"><span class="comment"># !! Contents within this block are managed by 'conda init' !!</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">export PATH=<span class="string">"$PATH:/home/lijiong/anaconda3/bin"</span></span><br><span class="line">conda activate base</span><br><span class="line"><span class="comment">#__conda_setup="$('/home/lijiong/anaconda3/bin/conda' 'shell.bash' 'hook' 2&gt; /dev/null)"</span></span><br><span class="line"><span class="comment">#if [ $? -eq 0 ]; then</span></span><br><span class="line"><span class="comment">#    eval "$__conda_setup"</span></span><br><span class="line"><span class="comment">#else</span></span><br><span class="line"><span class="comment">#    if [ -f "/home/lijiong/anaconda3/etc/profile.d/conda.sh" ]; then</span></span><br><span class="line"><span class="comment">#        . "/home/lijiong/anaconda3/etc/profile.d/conda.sh"</span></span><br><span class="line"><span class="comment">#    else</span></span><br><span class="line"><span class="comment">#        export PATH="/home/lijiong/anaconda3/bin:$PATH"</span></span><br><span class="line"><span class="comment">#    fi</span></span><br><span class="line"><span class="comment">#fi</span></span><br><span class="line"><span class="comment">#unset __conda_setup</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/07/18/WSL/" data-id="cjy8h41ov0004x8vdot03al4o" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/07/18/WSL/" data-id="cjydqkv380002k8vddqpdkzhs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -158,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/05/04/tensor操作/" data-id="cjy8h41p10007x8vdz283cau6" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/05/04/tensor操作/" data-id="cjydqkv3d0007k8vdk9a3l9i1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -213,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/04/01/cmd真滴害人/" data-id="cjy8h41os0003x8vdvqhdy5sj" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/04/01/cmd真滴害人/" data-id="cjydqkv3b0005k8vdregy29zs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/03/07/collections.Counter/" data-id="cjy8h41ox0005x8vdgtrmpmn0" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/03/07/collections.Counter/" data-id="cjydqkv3c0006k8vddvmaq6zj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -295,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/02/25/1ll/" data-id="cjy8h41oa0000x8vd162vsphk" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/02/25/1ll/" data-id="cjydqkv320000k8vdzpjbq5ch" class="article-share-link">Share</a>
       
       
     </footer>
@@ -343,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/02/23/写了个小脚本/" data-id="cjy8h41p20008x8vdcyaklnyz" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/02/23/写了个小脚本/" data-id="cjydqkv3o0008k8vdx80tf4ga" class="article-share-link">Share</a>
       
       
     </footer>
@@ -384,7 +388,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/02/14/Hexo/" data-id="cjy8h41oo0002x8vd6igu5c8o" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/02/14/Hexo/" data-id="cjydqkv360001k8vdqptm591g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -427,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/02/14/2019-02-14/" data-id="cjy8h41ok0001x8vdix7lojjg" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/02/14/2019-02-14/" data-id="cjydqkv390003k8vd1qwkrdv2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -473,7 +477,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.lijiong.xyz/2019/02/14/hello-world/" data-id="cjy8h41oz0006x8vdimd718p7" class="article-share-link">Share</a>
+      <a data-url="http://www.lijiong.xyz/2019/02/14/hello-world/" data-id="cjydqkv3a0004k8vddtvppoh7" class="article-share-link">Share</a>
       
       
     </footer>
